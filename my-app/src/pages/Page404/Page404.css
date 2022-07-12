@@ -1,0 +1,15 @@
+.cont404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+.title404,
+.pageTitle{
+  margin: 10px;
+  color:antiquewhite;
+}
+.title404 {
+  font-size: 8rem;
+}

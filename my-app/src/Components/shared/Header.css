@@ -1,0 +1,22 @@
+.header,
+.header_nav {
+  display: flex;
+  justify-content: space-between;
+}
+.header_nav {
+  list-style-type: none;
+}
+.navLink {
+  color: #1d1f22;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+.navLink.active {
+  color: rgba(94, 206, 123, 1);
+}
