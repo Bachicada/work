@@ -8,7 +8,24 @@ export const GET_ITEMS_BY_CATEGORY = gql`
         name
         inStock
         gallery
+        brand
+        prices {
+          amount
+          currency {
+            label
+            symbol
+          }
+        }
       }
+    }
+  }
+`;
+
+export const GET_CURRENCIES = gql`
+  query GetCurSymbols {
+    currencies {
+      symbol
+      label
     }
   }
 `;

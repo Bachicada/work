@@ -8,6 +8,7 @@ import { WomanPage } from "./pages/WomanPage/WomanPage";
 import { ManPage } from "./pages/ManPage/ManPage";
 import { KidsPage } from "./pages/KidsPage/KidsPage";
 import { CategoryName } from "./Components/category";
+import { ItemPLP } from "./Components/itemPLP";
 
 export class App extends React.Component {
   render() {
@@ -18,7 +19,9 @@ export class App extends React.Component {
           <CategoryName />
           <div className="pageContainer">
             <Routes>
-              <Route path={APP_ROUTES.WOMAN} element={<WomanPage />} />
+              <Route path={APP_ROUTES.WOMAN} element={<WomanPage />}>
+                <Route path=":id" element={<ItemPLP />} />
+              </Route>
               <Route path={APP_ROUTES.MAN} element={<ManPage />} />
               <Route path={APP_ROUTES.KIDS} element={<KidsPage />} />
               <Route path={APP_ROUTES.WRONGPATH} element={<Page404 />} />

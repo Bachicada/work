@@ -1,0 +1,23 @@
+.curList {
+  border: none;
+  margin-right: 22px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.curList option {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  text-align: right;
+  cursor: pointer;
+}
+.curList option:hover {
+  background-color: #eeeeee;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+}

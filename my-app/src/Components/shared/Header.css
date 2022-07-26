@@ -3,11 +3,17 @@
   display: flex;
   justify-content: space-between;
 }
+.header {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
 .header_nav {
   list-style-type: none;
 }
 .navLink {
-  color: #1d1f22;
+  margin-right: 32px;
   text-transform: uppercase;
   text-decoration: none;
   font-family: Raleway;
@@ -16,7 +22,13 @@
   line-height: 19px;
   letter-spacing: 0px;
   text-align: center;
+  cursor: pointer;
 }
 .navLink.active {
-  color: rgba(94, 206, 123, 1);
+  color: #5ece7b;
+  text-decoration-line: underline;
+  text-underline-offset: 30px;
+}
+.basket {
+  display: flex;
 }

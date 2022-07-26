@@ -1,15 +1,20 @@
 .categoryName {
-  font-family: "Raleway";
-  font-style: normal;
   font-weight: 400;
   font-size: 42px;
   line-height: 160%;
-  /* identical to box height, or 67px */
-
   display: flex;
   align-items: center;
-
-  /* --c-text */
-
-  color: #1d1f22;
+  border: none;
+}
+.categoryName option {
+  font-weight: 400;
+  font-size: 25px;
+}
+.itemsList {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 103px;
 }

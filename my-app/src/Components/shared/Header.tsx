@@ -2,7 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/a-logo.svg";
 import { ReactComponent as Cart } from "../../assets/empty-cart.svg";
+import { store } from "../../redux/store";
 import { APP_ROUTES } from "../../utils/Constants";
+import { CurCont, CurrencySelector } from "../currencySelector";
 import "./Header.css";
 
 export class Header extends React.Component {
@@ -43,11 +45,7 @@ export class Header extends React.Component {
         </nav>
         <Logo />
         <div className="basket">
-          <select defaultValue="dollar">
-            <option value="dollar">USD</option>
-            <option value="euro">EUR</option>
-            <option value="jpy">JPY</option>
-          </select>
+          <CurCont currencySymbol={null} currencyLabel={null} />
           <Cart />
         </div>
       </header>
