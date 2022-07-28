@@ -1,5 +1,5 @@
 export const APP_ROUTES = {
-  WOMAN: "/",
+  woman: "/woman",
   MAN: "/Man",
   KIDS: "/Kids",
   WRONGPATH: "*",

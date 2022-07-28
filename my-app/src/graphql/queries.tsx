@@ -29,3 +29,32 @@ export const GET_CURRENCIES = gql`
     }
   }
 `;
+
+export const GET_PRODUCT_INFO = gql`
+  query Query($productId: String!) {
+    product(id: $productId) {
+      id
+      name
+      inStock
+      gallery
+      description
+      attributes {
+        id
+        name
+        type
+        items {
+          displayValue
+          value
+        }
+      }
+      prices {
+        currency {
+          label
+          symbol
+        }
+        amount
+      }
+      brand
+    }
+  }
+`;

@@ -3,17 +3,18 @@ import { Query } from "@apollo/client/react/components";
 import "./category.css";
 import { GET_ITEMS_BY_CATEGORY } from "../../graphql/queries";
 import { ApolloError } from "@apollo/client";
-import { ItemCardProps, ItemCont } from "../itemCard";
+import { ItemCont } from "../itemCard";
+import { ItemCardProps } from "../../utils/types";
 
-type CatStateType = {
-  value: string; // like this
+export type CatStateType = {
+  value: string;
 };
 
-interface DataType {
+export type DataType = {
   category: {
-    products: Array<ItemCardProps>;
+    products: [ItemCardProps];
   };
-}
+};
 
 export class CategoryName extends React.Component<{}, CatStateType> {
   constructor(props: {}) {
@@ -29,7 +30,7 @@ export class CategoryName extends React.Component<{}, CatStateType> {
 
   render() {
     return (
-      <div>
+      <>
         <select
           className="categoryName"
           onChange={this.handleChange}
@@ -70,7 +71,7 @@ export class CategoryName extends React.Component<{}, CatStateType> {
             return <div>{finalResult}</div>;
           }}
         </Query>
-      </div>
+      </>
     );
   }
 }

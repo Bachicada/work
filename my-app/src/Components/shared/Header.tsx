@@ -14,12 +14,12 @@ export class Header extends React.Component {
         <nav className="header_nav">
           <li>
             <NavLink
-              to={APP_ROUTES.WOMAN}
+              to={APP_ROUTES.woman}
               className={({ isActive }) =>
                 `navLink${isActive ? " active" : ""}`
               }
             >
-              Woman
+              woman
             </NavLink>
           </li>
           <li>

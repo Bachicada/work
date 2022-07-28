@@ -3,27 +3,8 @@ import connect from "react-redux/es/components/connect";
 import { store } from "../../redux/store";
 import { ReactComponent as CartOnCardBtn } from "../../assets/cart-on-card.svg";
 import "./itemCard.css";
-import { Link } from "react-router-dom";
-import { ItemPLP } from "../itemPLP";
-
-export type CurrencyType = {
-  label: string;
-  symbol: string;
-};
-
-export type ProductPricesType = {
-  amount: string;
-  currency: CurrencyType;
-};
-
-export type ItemCardProps = {
-  id: string;
-  name: string;
-  inStock: boolean;
-  gallery: [string];
-  brand: string;
-  prices: [ProductPricesType];
-};
+import { Link, Navigate } from "react-router-dom";
+import { ItemCardProps } from "../../utils/types";
 
 export type CardStateType = {
   isHovered: boolean;
@@ -70,7 +51,11 @@ export class ItemCard extends React.Component<
         </div>
 
         <div className="itemInfo">
-          {this.state.isHovered ? <CartOnCardBtn className="cartBtn" /> : null}
+          {this.state.isHovered && this.props.product.inStock ? (
+            <Link to={`${window.location.pathname}/${this.props.product.id}`}>
+              <CartOnCardBtn className="cartBtn" />
+            </Link>
+          ) : null}
           <h4 className="itemTitle">{`${this.props.product.brand} ${this.props.product.name}`}</h4>
           <p className="currenceInfo">{`${
             store.getState().currencySymbol

@@ -1,0 +1,33 @@
+.itemInfoCont {
+  display: flex;
+}
+.mainItemInfo {
+  position: relative;
+  width: 292px;
+}
+.brandName {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 27px;
+}
+.valuesBox {
+  display: flex;
+  gap: 12px;
+}
+.colorBox {
+  width: 32px;
+  height: 32px;
+}
+.textValueBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px #1d1f22;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+}

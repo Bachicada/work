@@ -1,7 +1,8 @@
 import React from "react";
 
 export class WomanPage extends React.Component {
+  
   render() {
-    return <div>Woman's style</div>;
+    return <div>woman's style</div>;
   }
 }
