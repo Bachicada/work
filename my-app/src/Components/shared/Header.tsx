@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/a-logo.svg";
-import { ReactComponent as Cart } from "../../assets/empty-cart.svg";
-import { store } from "../../redux/store";
+
 import { APP_ROUTES } from "../../utils/Constants";
-import { CurCont, CurrencySelector } from "../currencySelector";
+import { CartIcon, CartIconCont } from "../cart";
+
+import { CurCont } from "../currencySelector";
 import "./Header.css";
 
 export class Header extends React.Component {
@@ -46,7 +47,7 @@ export class Header extends React.Component {
         <Logo />
         <div className="basket">
           <CurCont currencySymbol={null} currencyLabel={null} />
-          <Cart />
+          <CartIconCont />
         </div>
       </header>
     );

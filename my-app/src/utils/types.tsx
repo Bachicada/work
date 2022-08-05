@@ -27,6 +27,7 @@ export type ProductAttributesType = {
   name: string;
   type: string;
   items: [AttributesItemsType];
+  onChange: (attrName: string, value: string) => void;
 };
 
 export type ProductInfoType = {
@@ -40,3 +41,8 @@ export type ProductInfoType = {
   brand: string;
 };
 export type ProductDataType = { product: ProductInfoType };
+
+export type ItemCartInfoType = {
+  productId: string;
+  itemAttributes: Array<{ [key: string]: string | null }>;
+};

@@ -58,8 +58,10 @@ export class ItemCard extends React.Component<
           ) : null}
           <h4 className="itemTitle">{`${this.props.product.brand} ${this.props.product.name}`}</h4>
           <p className="currenceInfo">{`${
-            store.getState().currencySymbol
-          }${this.checkPrice(`${store.getState().currencySymbol}`)}`}</p>
+            store.getState().currency.currencySymbol
+          }${this.checkPrice(
+            `${store.getState().currency.currencySymbol}`
+          )}`}</p>
         </div>
       </div>
     );

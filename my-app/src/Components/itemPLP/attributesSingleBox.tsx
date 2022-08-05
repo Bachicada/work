@@ -3,18 +3,38 @@ import { AttributesItemsType, ProductAttributesType } from "../../utils/types";
 import "./itemPLP.css";
 
 export class AttributesSingleBox extends React.Component<ProductAttributesType> {
+  handleChangeValue(event: React.FormEvent<HTMLInputElement>) {
+    const target = event.target as HTMLInputElement;
+    const attributeName = target.name;
+    console.log("event", attributeName);
+
+    console.log("value", target.value);
+    console.log("id", this.props.id);
+  }
+
   render() {
     return (
       <>
-        <h4>{this.props.name}</h4>
+        <label className="itemAttributeName">{this.props.name}</label>
         {this.props.type === "swatch" ? (
           <div className="valuesBox">
             {this.props.items.map((item: AttributesItemsType, i: number) => (
               <div
-                className="colorBox"
-                style={{ backgroundColor: item.value }}
+                className="formRadioBtn colorBtn"
                 key={i}
-              ></div>
+                style={{ backgroundColor: item.value }}
+              >
+                <input
+                  name={this.props.name}
+                  id={item.value}
+                  type="radio"
+                  value={item.displayValue}
+                  onChange={(e) => {
+                    this.props.onChange(e.target.name, e.target.value);
+                  }}
+                />
+                <label htmlFor={item.value} className="colorLabel"></label>
+              </div>
             ))}
           </div>
         ) : null}
@@ -22,13 +42,24 @@ export class AttributesSingleBox extends React.Component<ProductAttributesType> 
           <div className="valuesBox">
             {this.props.items.map((item: AttributesItemsType, i: number) => (
               <div
-                className="textValueBox"
+                className="formRadioBtn"
                 key={i}
                 style={{
                   width: `calc(100% / ${this.props.items.length} - (${this.props.items.length} - 1 ) * 12px )`,
                 }}
               >
-                {item.value}
+                <input
+                  name={this.props.name}
+                  id={item.value}
+                  type="radio"
+                  value={item.displayValue}
+                  onChange={(e) => {
+                    this.props.onChange(e.target.name, e.target.value);
+                  }}
+                />
+                <label htmlFor={item.value} className="textValueLabel">
+                  {item.value}
+                </label>
               </div>
             ))}
           </div>

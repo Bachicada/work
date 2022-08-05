@@ -8,7 +8,7 @@ import {
   checkCurrencySymbol,
   checkCurrencyLabel,
   setStandartCurrency,
-} from "../../redux/itemSlicer";
+} from "../../redux/currencySlicer";
 
 import "./currencySelector.css";
 

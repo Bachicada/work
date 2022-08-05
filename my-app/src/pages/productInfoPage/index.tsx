@@ -1,7 +1,7 @@
 import { ApolloError } from "@apollo/client/errors";
 import { Query } from "@apollo/client/react/components/Query";
 import React from "react";
-import { ItemPLP } from "../../Components/itemPLP";
+import { ItemPLP, ItemPLPCont } from "../../Components/itemPLP";
 import { GET_PRODUCT_INFO } from "../../graphql/queries";
 import { ProductDataType } from "../../utils/types";
 
@@ -39,7 +39,7 @@ export class ProductInfoPage extends React.Component {
 
           if (data) {
             console.log("datapropd", data);
-            finalResult = <ItemPLP {...data.product} />;
+            finalResult = <ItemPLPCont {...data.product} />;
           }
           return <div>{finalResult}</div>;
         }}
