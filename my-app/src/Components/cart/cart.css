@@ -1,7 +1,9 @@
 .cartPic {
   position: relative;
-  height: 40px;
-  padding: 10px;
+}
+.cartIcon {
+  margin-top: 10px;
+  margin-right: 8px;
 }
 .cartCircle {
   position: absolute;

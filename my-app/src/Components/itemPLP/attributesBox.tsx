@@ -19,6 +19,7 @@ export class AttributesBox extends React.Component<BoxProps> {
     attributes: this.props.listOfAttributes.map((item) => ({
       [item.id]: null,
     })),
+    pickError: false,
   };
 
   setUserValues(attrName: string, value: null | string) {
@@ -43,7 +44,11 @@ export class AttributesBox extends React.Component<BoxProps> {
     itemCartInfo.productId = this.props.productId;
     itemCartInfo.itemAttributes = this.state.attributes;
 
-    this.props.dispatch(addItemToCart(itemCartInfo));
+    this.state.attributes.every((item) =>
+      Object.values(item).every((value) => value !== null)
+    )
+      ? this.props.dispatch(addItemToCart(itemCartInfo))
+      : this.setState({ pickError: true });
   }
 
   render() {
@@ -56,11 +61,15 @@ export class AttributesBox extends React.Component<BoxProps> {
             <AttributesSingleBox
               {...item}
               key={i}
-              onChange={(event, value) => this.setUserValues(event, value)}
+              onChange={(event, value) => {
+                this.setUserValues(event, value);
+                this.setState({ pickError: false });
+              }}
             />
           )
         )}
         <input type="submit" value="ADD TO CART" className="submitCartBtn" />
+        {this.state.pickError ? <p>Choose attributes</p> : null}
       </form>
     );
   }

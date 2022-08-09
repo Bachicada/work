@@ -5,6 +5,19 @@
   position: relative;
   width: 292px;
 }
+.sideGallery {
+  width: 79px;
+  position: relative;
+  margin-right: 40px;
+}
+.sideGallery img {
+  margin-bottom: 40px;
+}
+.itemPoster {
+  width: 610px;
+  height: auto;
+  margin-right: 100px;
+}
 .brandName {
   font-weight: 600;
   font-size: 30px;

@@ -1,4 +1,3 @@
-import { IncomingMessage } from "http";
 import React from "react";
 import connect from "react-redux/es/components/connect";
 import { AppStateType, store } from "../../redux/store";
@@ -23,8 +22,12 @@ export class ItemPLP extends React.Component<ProductInfoType> {
 
     return (
       <div className="itemInfoCont">
-        <div className="sideGallery">{}</div>
-        <img src={this.props.gallery[0]} />
+        <div className="sideGallery">
+          {this.props.gallery.map((item, i) => (
+            <img src={item} key={i} />
+          ))}
+        </div>
+        <img src={this.props.gallery[0]} className="itemPoster" />
         <div className="mainItemInfo">
           <h2 className="brandName">{this.props.brand}</h2>
           <h3 className="itemName">{this.props.name}</h3>

@@ -8,7 +8,7 @@ export class CartIcon extends React.Component {
   render() {
     return (
       <div className="cartPic">
-        <Cart />
+        <Cart className="cartIcon" />
         {store.getState().cart.cart.length ? (
           <div className="cartCircle">{store.getState().cart.cart.length}</div>
         ) : null}
